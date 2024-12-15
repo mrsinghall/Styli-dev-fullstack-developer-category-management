@@ -1,0 +1,164 @@
+/* Common Variables */
+$black-light-bg: #1b1b1b;
+$white: #ffffff;
+$gray-border: 0.1rem solid gray;
+$category-hover-bg: white;
+
+.bg-black-light {
+  mat-card {
+    background-color: $black-light-bg;
+    border-radius: 0;
+
+    .card-details {
+      color: $white;
+      font-size: small;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 50px;
+
+      .card-details-left {
+        display: flex;
+        align-items: center;
+
+        .cloth, .shipping, .return-policy {
+          display: flex;
+          margin: 0 10px;
+          align-items: center;
+
+          .cloth-icon, .shipping-icon, .return-policy-icon{
+            display: flex;
+            align-items: center;
+            padding: 0 2px;
+          }
+        }
+      }
+    }
+  }
+
+  ::ng-deep {
+    .mat-mdc-text-field-wrapper.mdc-text-field--filled.mdc-text-field--no-label {
+      background-color: transparent;
+    }
+
+    mat-select {
+      color: $white;
+      font-size: small;
+    }
+  }
+}
+
+.header-main,
+.header-sub {
+  mat-card {
+    box-shadow: none;
+  }
+
+  .header-main-card,
+  .header-sub-card {
+    display: flex;
+    align-items: center;
+
+    &.header-main-card {
+      background-color: #f1f1f1;
+
+      .main-card-logo img {
+        width: 100px;
+        height: 75px;
+        margin: 0 20px;
+      }
+
+      .main-card-categories {
+        display: flex;
+        align-items: center;
+
+        .category-name {
+          cursor: pointer;
+          font-size: large;
+          font-weight: 500;
+          height: 74px;
+          padding: 0 30px;
+
+          &.categorySelected {
+            background-color: $category-hover-bg;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+
+    &.header-sub-card {
+      height: 35px;
+      border-bottom: $gray-border;
+
+      .sub-card-categories {
+        display: flex;
+        align-items: center;
+        margin: 0 15px;
+
+        .sub-category-name {
+          cursor: pointer;
+          font-size: 13px;
+          height: 74px;
+          padding: 0 15px;
+
+          &.subCategorySelected {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+.stylie-body {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+
+  .scrollable-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+  }
+
+  .filter-card {
+    border: none;
+    flex-shrink: 0;
+    margin-right: 10px;
+    text-align: center;
+  }
+}
+
+.filter-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/* Card Media Styling */
+:host ::ng-deep .mdc-card__media:first-child {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}

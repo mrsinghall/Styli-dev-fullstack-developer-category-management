@@ -1,0 +1,106 @@
+<div class="stylie-clone">
+  <!-- Header Section -->
+  <div class="header-wrap">
+    <!-- Top Card with Information -->
+    <div class="bg-black-light">
+      <mat-card>
+        <div class="card-details">
+          <div class="card-details-left">
+            <!-- Cloth Info -->
+            <div class="cloth">
+              <div class="cloth-icon">
+                <mat-icon>accessibility</mat-icon>
+              </div>
+              <div class="cloth-msg">100's of new styles everyday</div>
+            </div>
+            <!-- Shipping Info -->
+            <div class="shipping">
+              <div class="shipping-icon">
+                <mat-icon>shutter_speed</mat-icon>
+              </div>
+              <div class="shipping-msg">Express shipping</div>
+            </div>
+            <!-- Return Policy Info -->
+            <div class="return-policy">
+              <div class="return-policy-icon">
+                <mat-icon>autorenew</mat-icon>
+              </div>
+              <div class="return-policy-msg">Free and easy returns</div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+    <!-- Header Main -->
+    <div class="header-main">
+      <mat-card>
+        <div class="header-main-card">
+          <!-- Logo -->
+          <div class="main-card-logo">
+            <img src="assets/images/logo.png" alt="styli-logo" />
+          </div>
+          <!-- Categories -->
+          <div class="main-card-categories">
+            <div
+              *ngFor="let category of categories"
+              class="categories-name"
+            >
+              <span
+                class="category-name"
+                (click)="onCategoryClick(category._id)"
+                [ngClass]="{
+                  categorySelected: isCategorySelected(category._id)
+                }"
+              >
+                {{ category.name }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+    <!-- Header Sub -->
+    <div class="header-sub">
+      <mat-card>
+        <div class="header-sub-card">
+          <div class="sub-card-categories">
+            <div
+              *ngFor="let subCategory of subCategories"
+              class="sub-categories-name"
+            >
+              <span
+                class="sub-category-name"
+                (click)="onSubCategoryClick(subCategory._id)"
+                [ngClass]="{
+                  subCategorySelected: isSubCategorySelected(subCategory._id)
+                }"
+              >
+                {{ subCategory.name }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+  <!-- Body Section -->
+  <div class="stylie-body">
+    <div class="scrollable-container">
+      <!-- Filter Cards -->
+      <div *ngFor="let filter of filters" class="filter-card">
+        <mat-card class="filter-card" appearance="outlined">
+          <img
+            mat-card-image
+            [src]="filter.imageUrl"
+            alt="{{ filter.name }}"
+            class="filter-img"
+          />
+          <mat-card-subtitle>{{ filter.name }}</mat-card-subtitle>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

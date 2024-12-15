@@ -1,0 +1,14 @@
+# Node.js modules
+/dist
+/node_modules
+/.angular
+
+# npm and yarn logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build output
+dist/
+build/
+
