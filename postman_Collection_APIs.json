@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "9c7f5ae9-918b-400b-bc0d-005f3f56a32a",
+		"name": "E-Commerce Category Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20092282"
+	},
+	"item": [
+		{
+			"name": "Get Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/categories/tree",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"categories",
+						"tree"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Women\",\n    \"slug\": \"women\",\n    \"subcategories\": [\n        {\n            \"name\": \"T-Shirts\",\n            \"slug\": \"tshirts\",\n            \"filters\": [\n                {\n                    \"name\": \"Party T-Shirts\",\n                    \"slug\": \"party tshirts\",\n                    \"options\": [\n                        \"US Polo\",\n                        \"Nike\",\n                        \"Being Human\"\n                    ],\n                    \"imageUrl\": \"/assets/images/men/tshirts/party.jpg\"\n                },\n                {\n                    \"name\": \"Casual T-Shirts\",\n                    \"slug\": \"casual tshirts\",\n                    \"options\": [\n                        \"Roadster\",\n                        \"Mast & Harbour\",\n                        \"Wrogn\"\n                    ],\n                    \"imageUrl\": \"/assets/images/men/tshirts/casual.jpg\"\n                },\n                {\n                    \"name\": \"Office T-Shirts\",\n                    \"slug\": \"office tshirts\",\n                    \"options\": [\n                        \"Levi's\",\n                        \"Lee Cooper\",\n                        \"Jack & Jones\"\n                    ],\n                    \"imageUrl\": \"/assets/images/men/tshirts/office.jpg\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Footwear\",\n            \"slug\": \"footwear\",\n            \"filters\": [\n                {\n                    \"name\": \"Branded\",\n                    \"slug\": \"branded\",\n                    \"options\": [\n                        \"Puma\",\n                        \"Nike\",\n                        \"Addidas\"\n                    ],\n                    \"imageUrl\": \"/assets/images/men/footwear/branded.jpg\"\n                },\n                {\n                    \"name\": \"Non Branded\",\n                    \"slug\": \"non branded\",\n                    \"options\": [\n                        \"Roadster\",\n                        \"Mast & Harbour\",\n                        \"Red Tape\"\n                    ],\n                    \"imageUrl\": \"/assets/images/men/footwear/nonBranded.jpg\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Shirts\",\n            \"slug\": \"shirts\",\n            \"filters\": [\n                {\n                    \"name\": \"Party Shirts\",\n                    \"slug\": \"party shirts\",\n                    \"options\": [\n                        \"US Polo\",\n                        \"Nike\",\n                        \"Being Human\"\n                    ],\n                    \"imageUrl\": \"/assets/images/men/shirts/party.jpg\"\n                },\n                {\n                    \"name\": \"Casual Shirts\",\n                    \"slug\": \"casual shirts\",\n                    \"options\": [\n                        \"Roadster\",\n                        \"Mast & Harbour\",\n                        \"Wrogn\"\n                    ],\n                    \"imageUrl\": \"/assets/images/men/shirts/casual.jpg\"\n                },\n                {\n                    \"name\": \"Office Shirts\",\n                    \"slug\": \"office shirts\",\n                    \"options\": [\n                        \"Levi's\",\n                        \"Lee Cooper\",\n                        \"Jack & Jones\"\n                    ],\n                    \"imageUrl\": \"/assets/images/men/shirts/office.jpg\"\n                }\n            ]\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Category",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Women\",\n    \"slug\": \"women\",\n    \"subcategories\": [\n        {\n            \"_id\": \"675f0c5e6206177d1f51dd5f\",\n            \"name\": \"T-Shirts\",\n            \"slug\": \"tshirts\",\n            \"filters\": [\n                {\n                    \"_id\": \"675f0c5e6206177d1f51dd62\",\n                    \"name\": \"Cotton\",\n                    \"slug\": \"cotton\",\n                    \"options\": [\n                        \"Reebok\",\n                        \"New me\"\n                    ],\n                    \"imageUrl\": \"\"\n                },\n                {\n                    \"name\": \"Polyster\",\n                    \"slug\": \"polyster\",\n                    \"options\": [\n                        \"polyster a\",\n                        \"polyster b\"\n                    ],\n                    \"imageUrl\": \"\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Shirts\",\n            \"slug\": \"shirts\",\n            \"filters\": [\n                {\n                    \"name\": \"Cotton shirts\",\n                    \"slug\": \"cotton\",\n                    \"options\": [\n                        \"party shirts\",\n                        \"office shirts\"\n                    ],\n                    \"imageUrl\": \"\"\n                }\n            ]\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/categories/675f0c5e6206177d1f51dd5c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"categories",
+						"675f0c5e6206177d1f51dd5c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/categories/675ea67e192e1233f0a2a8b0?subcategoryId=675ea67e192e1233f0a2a8b2&filterId=675ea67e192e1233f0a2a8b6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories",
+						"675ea67e192e1233f0a2a8b0"
+					],
+					"query": [
+						{
+							"key": "subcategoryId",
+							"value": "675ea67e192e1233f0a2a8b2"
+						},
+						{
+							"key": "filterId",
+							"value": "675ea67e192e1233f0a2a8b6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
